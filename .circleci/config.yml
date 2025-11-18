@@ -7,8 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
+        name: Move into Week 1
+        command: cd "Week_1"
+      - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip3 install -r requirements.txt
       - run:
           name: Run tests
           command: pytest testsuite.py
