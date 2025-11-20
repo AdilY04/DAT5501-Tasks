@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import datetime as dt
 
-df = pd.read_csv('historical_data_GOOG.csv')
+df = pd.read_csv('Week_5/historical_data_GOOG.csv')
 #print(df.head())
 #we see from the head that we will need to sort the formatting - will need to utilise datetime format + remove any $ signs + ensure float
 df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y')
@@ -27,3 +27,5 @@ def percentage_change():
 #calc std deviation
 def std_PctChange():
     print(df['PctChange'].std())
+
+std_PctChange()
