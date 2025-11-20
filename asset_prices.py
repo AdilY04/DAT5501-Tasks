@@ -1,11 +1,3 @@
-"""
-Coding activity: asset prices
-- Clean dataset as necessary
-- Plot closing price vs. date
-- Extra: calculate daily percentage change, plot vs. date
-- Extra extra: calculate standard deviation of percent daily changes
-"""
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,9 +12,18 @@ df['Open'] = df['Open'].str.replace('$','').astype(float)
 df['High'] = df['High'].str.replace('$','').astype(float)
 df['Low'] = df['Low'].str.replace('$','').astype(float)
 
-#data clean at this point
+#plotting price_vs_date
+def price_vs_date():
+    plt.plot(df['Date'], df['Close/Last'])
+    plt.show()
 
-plt.plot(df['Date'], df['Close/Last'])
-plt.show()
+#plotting daily percentage change vs date
+df['PctChange'] = df['Close/Last'].pct_change() * 100
 
-#need to do the extra stuff
+def percentage_change():
+    plt.plot(df['Date'], df['PctChange'])
+    plt.show()
+
+#calc std deviation
+def std_PctChange():
+    print(df['PctChange'].std())
