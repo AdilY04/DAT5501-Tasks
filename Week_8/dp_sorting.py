@@ -16,3 +16,4 @@ df['Low'] = df['Low'].str.replace('$','').astype(float)
 #assuming daily change in price is high-low
 df['Daily Change'] = df['Close/Last'].diff()
 print(df.head())
+#plotting t vs n
