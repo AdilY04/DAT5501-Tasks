@@ -15,9 +15,20 @@ Which model is the best?
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import re
 
-#cleaning the data - it has all different countries, i just want gdp of uk from 1922-2022
+#cleaning the data - it has all different countries, i just want gdp of uk from 1922-2012 according to above instruction
 df = pd.read_csv('gdp-per-capita-maddison-project-database.csv', sep=',')
 df_uk = df[df['Entity'] == "United Kingdom"]
-filtered_df = df_uk[(df_uk['Year']>=1922)&(df_uk['Year']<=2022)]
+filtered_df = df_uk[(df_uk['Year']>=1922)&(df_uk['Year']<=2012)]
 
+x = filtered_df['Year'].values
+y = filtered_df['GDP per capita'].values
+
+all_coeffs = {}
+all_fits = {}
+for i in range(1,10):
+    coeffs = np.polyfit(x,y,i)
+    p = np.poly1d(coeffs)
+    all_coeffs[i] = coeffs
+    all_fits[i] = p
