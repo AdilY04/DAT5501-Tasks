@@ -11,7 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #cleaning the data - it has all different countries, i just want gdp of uk from 1922-2012 according to above instruction
-df = pd.read_csv('gdp-per-capita-maddison-project-database.csv', sep=',')
+df = pd.read_csv('Week_9/gdp-per-capita-maddison-project-database.csv', sep=',')
 df_uk = df[df['Entity'] == "United Kingdom"]
 filtered_df = df_uk[(df_uk['Year']>=1922)&(df_uk['Year']<=2012)]
 
