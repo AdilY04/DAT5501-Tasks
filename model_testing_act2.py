@@ -4,12 +4,6 @@ Sab-sample all but the past 10 years of your data
 Fit your sub-sample with polynomials from order 1 (a line) to 9
 Forecast each polynomial 10 years into the future
 How do they compare with reality?
-
-Activity 3:
-For each polynomial, calculate the x2 per degree of freedom and the BIC
-→ Plot the x2 per degree of freedom and the BIC as a function of the polynomial order
-How does the BIC compare to the x2 per degree of freedom?
-Which model is the best?
 """
 
 import pandas as pd
@@ -45,7 +39,7 @@ actual_future_values = df_uk['GDP per capita'][(df_uk['Year']>=2013)&(df_uk['Yea
 #just have to turn forecasted values into np array so they can be plotted together
 forecast_arrays = np.array(list(all_forecasts.values()))
 
-#did use some AI assistance from here.
+#did use some AI assistance below.
 x_future = future_years  
 plt.plot(x_future, actual_future_values, label="Actual", linewidth=3)
 
