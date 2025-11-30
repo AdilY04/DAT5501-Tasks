@@ -26,7 +26,7 @@ This repository contains tasks completed over 10 weeks of DAT5501, covering topi
 
 ---
 
-## Week 3: Financial Data Analysis and Date Calculations
+## Week 5: Financial Data Analysis and Date Calculations
 **Code Files:** `asset_prices.py`, `duration_calendar.py`, `us_election.py`  
 **Datasets:** `historical_data_GOOG.csv`, `US-2016-primary.csv`, `random_dates.csv`  
 
